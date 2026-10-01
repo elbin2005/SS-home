@@ -76,7 +76,7 @@ export default function SlideMenu({ isOpen, setMenuOpen, user, signOut, navigate
             style={{
               position: 'fixed',
               top: 0, right: 0, bottom: 0,
-              width: '320px',
+              width: 'min(320px, 90vw)',
               zIndex: 9995,
               background: 'var(--card)',
               color: 'var(--text-primary)',
@@ -87,6 +87,7 @@ export default function SlideMenu({ isOpen, setMenuOpen, user, signOut, navigate
               flexDirection: 'column',
               boxShadow: '-8px 0 40px rgba(0,0,0,0.25)',
               overflow: 'hidden',
+              maxHeight: '100dvh',
             }}
           >
             {/* Decorative top gradient bar */}

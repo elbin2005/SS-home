@@ -4,7 +4,7 @@ import { ArrowLeft, Mail, Clock, Sparkles } from 'lucide-react'
 
 export default function ComingSoon() {
   return (
-    <div style={{
+    <div className="coming-soon-page" style={{
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -82,6 +82,7 @@ export default function ComingSoon() {
 
       {/* Main card */}
       <motion.div
+        className="coming-soon-card"
         initial={{ opacity: 0, y: 40, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -177,6 +178,7 @@ export default function ComingSoon() {
 
         {/* Info cards */}
         <motion.div
+          className="coming-soon-features"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
@@ -212,6 +214,7 @@ export default function ComingSoon() {
 
         {/* CTA Buttons */}
         <motion.div
+          className="coming-soon-actions"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
