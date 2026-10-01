@@ -399,7 +399,7 @@ export default function About() {
                 and publication.
               </p>
               <div style={{ display: 'flex', gap: '0.85rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link to="/register" className="btn btn-primary" style={{ padding: '0.8rem 2.25rem', fontWeight: 700 }}>
+                <Link to="/coming-soon" className="btn btn-primary" style={{ padding: '0.8rem 2.25rem', fontWeight: 700 }}>
                   Submit Your Manuscript
                 </Link>
               </div>

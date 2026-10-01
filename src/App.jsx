@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
+import { AuthProvider } from './context/AuthContext'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { ScrollProgress } from './components/ui/ScrollProgress'
@@ -47,32 +48,34 @@ export default function App() {
       <ScrollProgress />
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <ThemeProvider>
-          <ToastProvider>
-            <Routes>
-              {/* ── Public pages ── */}
-              <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
-              <Route path="/published-issues" element={<PublicLayout><PublishedIssues /></PublicLayout>} />
-              <Route path="/published-papers" element={<PublicLayout><PublishedPapers /></PublicLayout>} />
-              <Route path="/future-issues" element={<PublicLayout><FutureIssues /></PublicLayout>} />
-              <Route path="/editorial-board" element={<PublicLayout><EditorialBoard /></PublicLayout>} />
-              <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
-              <Route path="/paper/:id" element={<PublicLayout><PaperDetail /></PublicLayout>} />
+          <AuthProvider>
+            <ToastProvider>
+              <Routes>
+                {/* ── Public pages ── */}
+                <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
+                <Route path="/published-issues" element={<PublicLayout><PublishedIssues /></PublicLayout>} />
+                <Route path="/published-papers" element={<PublicLayout><PublishedPapers /></PublicLayout>} />
+                <Route path="/future-issues" element={<PublicLayout><FutureIssues /></PublicLayout>} />
+                <Route path="/editorial-board" element={<PublicLayout><EditorialBoard /></PublicLayout>} />
+                <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
+                <Route path="/paper/:id" element={<PublicLayout><PaperDetail /></PublicLayout>} />
 
-              {/* ── Coming Soon — auth & dashboard routes ── */}
-              <Route path="/coming-soon" element={<PublicLayout><ComingSoon /></PublicLayout>} />
-              <Route path="/login" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/register" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/forgot-password" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/pending-approval" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/notifications" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/student/*" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/reviewer/*" element={<Navigate to="/coming-soon" replace />} />
-              <Route path="/admin/*" element={<Navigate to="/coming-soon" replace />} />
+                {/* ── Coming Soon — auth & dashboard routes ── */}
+                <Route path="/coming-soon" element={<PublicLayout><ComingSoon /></PublicLayout>} />
+                <Route path="/login" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/register" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/forgot-password" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/pending-approval" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/notifications" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/student/*" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/reviewer/*" element={<Navigate to="/coming-soon" replace />} />
+                <Route path="/admin/*" element={<Navigate to="/coming-soon" replace />} />
 
-              {/* ── Fallback ── */}
-              <Route path="*" element={<PublicLayout><NotFound /></PublicLayout>} />
-            </Routes>
-          </ToastProvider>
+                {/* ── Fallback ── */}
+                <Route path="*" element={<PublicLayout><NotFound /></PublicLayout>} />
+              </Routes>
+            </ToastProvider>
+          </AuthProvider>
         </ThemeProvider>
       </BrowserRouter>
     </>
