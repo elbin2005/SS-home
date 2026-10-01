@@ -4878,6 +4878,35 @@ html {
     font-size: 0.95rem;
     line-height: 1.65;
   }
+
+  /* ── ABOUT PAGE ── */
+  .about-intro-section {
+    padding: 2.5rem 0.5rem !important;
+  }
+
+  .about-bubble-backdrop {
+    display: none !important;
+  }
+
+  .about-intro-content {
+    width: 100% !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .about-intro-p {
+    font-size: 0.98rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 1.25rem !important;
+    text-align: center !important;
+  }
+
+  .about-intro-quote {
+    padding: 1.25rem 1rem !important;
+    margin: 1.6rem auto !important;
+    font-size: 0.98rem !important;
+    line-height: 1.8 !important;
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 380px) {
@@ -4898,5 +4927,9 @@ html {
 
   .coming-soon-card {
     padding: 1.5rem 1rem !important;
+  }
+
+  .about-intro-quote {
+    padding: 1rem 0.75rem !important;
   }
 }

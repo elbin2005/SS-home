@@ -111,183 +111,190 @@ export default function About() {
           }
         `}</style>
 
-        <section style={{
-          padding: '4rem 0',
+        <section className="about-intro-section" style={{
+          padding: 'clamp(2.5rem, 6vw, 4.5rem) 0',
+          position: 'relative',
+          overflow: 'hidden',
         }}>
-          <div className="container">
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr clamp(220px, 30%, 340px)',
-              gap: '3rem',
-              alignItems: 'start',
+          <div className="container" style={{ position: 'relative' }}>
+
+            {/* ── Ambient floating orbs backdrop ── */}
+            <div className="about-bubble-backdrop" style={{
+              position: 'absolute',
+              inset: 0,
+              pointerEvents: 'none',
+              userSelect: 'none',
+              zIndex: 0,
             }}>
-
-              {/* ── LEFT: text ── */}
-              <div>
-                {/* Paragraph 1 */}
-                <p style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.08rem',
-                  lineHeight: 1.95,
-                  color: 'var(--foreground)',
-                  margin: '0 0 1.5rem',
-                }}>
-                  <strong>Science &amp; Society</strong> is a multidisciplinary, peer-reviewed journal
-                  published by <strong>Nirmala Academic and Research Publications (NARP)</strong>. Since
-                  its inception in 2003, the journal has been committed to promoting high-quality research
-                  and scholarly communication, establishing a distinguished legacy of serving the academic
-                  community.
-                </p>
-
-                {/* Paragraph 2 */}
-                <p style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.08rem',
-                  lineHeight: 1.95,
-                  color: 'var(--foreground)',
-                  margin: '0 0 1.5rem',
-                }}>
-                  The journal provides a platform for the publication and dissemination of original
-                  research articles and review papers across the broad domains of science, technology,
-                  humanities, literature, commerce, and allied disciplines. It seeks to foster
-                  interdisciplinary research, promote scholarly dialogue, and disseminate knowledge
-                  that advances scientific inquiry, innovation, and societal development.
-                </p>
-
-                {/* Paragraph 3 — peer review blockquote */}
-                <blockquote style={{
-                  margin: '0 0 1.5rem',
-                  padding: '1.6rem 2rem',
-                  borderLeft: '3px solid var(--primary)',
-                  background: 'var(--card)',
-                  borderRadius: '0 0.75rem 0.75rem 0',
-                  fontFamily: 'var(--font-serif)',
-                  fontStyle: 'italic',
-                  fontSize: '1.06rem',
-                  lineHeight: 1.95,
-                  color: 'var(--foreground)',
-                }}>
-                  All manuscripts submitted to the journal undergo a rigorous peer-review process to
-                  ensure originality, scientific merit, methodological rigor, and ethical integrity.
-                  The journal adheres to internationally accepted standards of publication ethics and
-                  follows a transparent and objective editorial process for the evaluation and
-                  publication of manuscripts.
-                </blockquote>
-
-                {/* Paragraph 4 */}
-                <p style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.08rem',
-                  lineHeight: 1.95,
-                  color: 'var(--foreground)',
-                  margin: '0 0 1.5rem',
-                }}>
-                  The editorial policies, publication standards, and strategic direction of the journal
-                  are formulated and periodically reviewed by the <strong>Editorial Board</strong> and{' '}
-                  <strong>Advisory Board</strong>, comprising distinguished academicians and researchers
-                  from diverse disciplines. Their collective expertise ensures that the journal maintains
-                  the highest standards of scholarly excellence, academic integrity, and editorial quality.
-                </p>
-
-                {/* Paragraph 5 */}
-                <p style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.08rem',
-                  lineHeight: 1.95,
-                  color: 'var(--foreground)',
-                  margin: 0,
-                }}>
-                  Through its unwavering commitment to quality publishing and interdisciplinary
-                  scholarship, <em>Science &amp; Society</em> serves as a vibrant platform for
-                  researchers, academicians, professionals, and students to disseminate innovative
-                  research, exchange ideas, and contribute to the advancement of knowledge across
-                  diverse disciplines.
-                </p>
-              </div>
-
-              {/* ── RIGHT: floating bubble decoration ── */}
+              {/* Primary blue orb left */}
               <div style={{
-                position: 'sticky',
-                top: '6rem',
-                height: '480px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                pointerEvents: 'none',
-                userSelect: 'none',
-              }}>
-                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                position: 'absolute', top: '12%', left: '-2%',
+                width: '160px', height: '160px', borderRadius: '50%',
+                background: 'radial-gradient(circle at 35% 35%, rgba(29,78,216,0.22) 0%, rgba(29,78,216,0.04) 60%, transparent 100%)',
+                animation: 'bubbleFloat 7s ease-in-out infinite',
+                backdropFilter: 'blur(2px)',
+              }} />
 
-                  {/* Large primary orb */}
-                  <div style={{
-                    position: 'absolute', top: '10%', left: '15%',
-                    width: '160px', height: '160px', borderRadius: '50%',
-                    background: 'radial-gradient(circle at 35% 35%, rgba(29,78,216,0.25) 0%, rgba(29,78,216,0.05) 60%, transparent 100%)',
-                    animation: 'bubbleFloat 7s ease-in-out infinite',
-                    backdropFilter: 'blur(2px)',
-                  }} />
+              {/* Gold orb right */}
+              <div style={{
+                position: 'absolute', top: '28%', right: '-1%',
+                width: '130px', height: '130px', borderRadius: '50%',
+                background: 'radial-gradient(circle at 40% 40%, rgba(201,168,76,0.25) 0%, rgba(201,168,76,0.06) 60%, transparent 100%)',
+                animation: 'bubbleFloat2 9s ease-in-out 1.5s infinite',
+              }} />
 
-                  {/* Medium gold orb */}
-                  <div style={{
-                    position: 'absolute', top: '38%', right: '8%',
-                    width: '110px', height: '110px', borderRadius: '50%',
-                    background: 'radial-gradient(circle at 40% 40%, rgba(201,168,76,0.3) 0%, rgba(201,168,76,0.08) 60%, transparent 100%)',
-                    animation: 'bubbleFloat2 9s ease-in-out 1.5s infinite',
-                  }} />
+              {/* Small blue orb top-right */}
+              <div style={{
+                position: 'absolute', top: '6%', right: '8%',
+                width: '75px', height: '75px', borderRadius: '50%',
+                background: 'radial-gradient(circle at 35% 35%, rgba(59,130,246,0.28) 0%, transparent 70%)',
+                animation: 'bubbleFloat 11s ease-in-out 3s infinite',
+              }} />
 
-                  {/* Small blue orb top-right */}
-                  <div style={{
-                    position: 'absolute', top: '5%', right: '18%',
-                    width: '70px', height: '70px', borderRadius: '50%',
-                    background: 'radial-gradient(circle at 35% 35%, rgba(59,130,246,0.35) 0%, transparent 70%)',
-                    animation: 'bubbleFloat 11s ease-in-out 3s infinite',
-                  }} />
+              {/* Tiny gold dot left */}
+              <div style={{
+                position: 'absolute', top: '45%', left: '3%',
+                width: '45px', height: '45px', borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(201,168,76,0.35) 0%, transparent 70%)',
+                animation: 'bubbleFloat2 6s ease-in-out 0.8s infinite',
+              }} />
 
-                  {/* Tiny gold dot */}
-                  <div style={{
-                    position: 'absolute', top: '30%', left: '8%',
-                    width: '40px', height: '40px', borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(201,168,76,0.4) 0%, transparent 70%)',
-                    animation: 'bubbleFloat2 6s ease-in-out 0.8s infinite',
-                  }} />
+              {/* Bottom blue orb left */}
+              <div style={{
+                position: 'absolute', bottom: '8%', left: '2%',
+                width: '140px', height: '140px', borderRadius: '50%',
+                background: 'radial-gradient(circle at 40% 40%, rgba(29,78,216,0.18) 0%, rgba(99,102,241,0.06) 55%, transparent 100%)',
+                animation: 'bubbleFloat 8.5s ease-in-out 2s infinite',
+              }} />
 
-                  {/* Large bottom orb */}
-                  <div style={{
-                    position: 'absolute', bottom: '8%', left: '20%',
-                    width: '130px', height: '130px', borderRadius: '50%',
-                    background: 'radial-gradient(circle at 40% 40%, rgba(29,78,216,0.2) 0%, rgba(99,102,241,0.08) 55%, transparent 100%)',
-                    animation: 'bubbleFloat 8.5s ease-in-out 2s infinite',
-                  }} />
+              {/* Small indigo bottom-right */}
+              <div style={{
+                position: 'absolute', bottom: '14%', right: '5%',
+                width: '65px', height: '65px', borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%)',
+                animation: 'bubbleFloat2 10s ease-in-out 4s infinite',
+              }} />
 
-                  {/* Small indigo bottom-right */}
-                  <div style={{
-                    position: 'absolute', bottom: '18%', right: '12%',
-                    width: '60px', height: '60px', borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)',
-                    animation: 'bubbleFloat2 10s ease-in-out 4s infinite',
-                  }} />
+              {/* Ring overlay left */}
+              <div style={{
+                position: 'absolute', top: '22%', left: '0%',
+                width: '180px', height: '180px', borderRadius: '50%',
+                border: '1px solid rgba(29,78,216,0.12)',
+                animation: 'bubblePulse 6s ease-in-out infinite',
+              }} />
 
-                  {/* Ring overlay */}
-                  <div style={{
-                    position: 'absolute', top: '22%', left: '10%',
-                    width: '180px', height: '180px', borderRadius: '50%',
-                    border: '1px solid rgba(29,78,216,0.15)',
-                    animation: 'bubblePulse 6s ease-in-out infinite',
-                  }} />
-
-                  {/* Second ring */}
-                  <div style={{
-                    position: 'absolute', bottom: '15%', right: '5%',
-                    width: '120px', height: '120px', borderRadius: '50%',
-                    border: '1px solid rgba(201,168,76,0.15)',
-                    animation: 'bubblePulse 8s ease-in-out 2s infinite',
-                  }} />
-
-                </div>
-              </div>
-
-
+              {/* Second ring right */}
+              <div style={{
+                position: 'absolute', bottom: '20%', right: '1%',
+                width: '130px', height: '130px', borderRadius: '50%',
+                border: '1px solid rgba(201,168,76,0.12)',
+                animation: 'bubblePulse 8s ease-in-out 2s infinite',
+              }} />
             </div>
+
+            {/* ── CENTERED: text content ── */}
+            <div className="about-intro-content" style={{
+              position: 'relative',
+              zIndex: 1,
+              maxWidth: '860px',
+              margin: '0 auto',
+              textAlign: 'center',
+            }}>
+              {/* Paragraph 1 */}
+              <p className="about-intro-p" style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(1.02rem, 2.2vw, 1.1rem)',
+                lineHeight: 1.95,
+                color: 'var(--foreground)',
+                margin: '0 auto 1.5rem',
+                maxWidth: '820px',
+                textAlign: 'center',
+              }}>
+                <strong>Science &amp; Society</strong> is a multidisciplinary, peer-reviewed journal
+                published by <strong>Nirmala Academic and Research Publications (NARP)</strong>. Since
+                its inception in 2003, the journal has been committed to promoting high-quality research
+                and scholarly communication, establishing a distinguished legacy of serving the academic
+                community.
+              </p>
+
+              {/* Paragraph 2 */}
+              <p className="about-intro-p" style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(1.02rem, 2.2vw, 1.1rem)',
+                lineHeight: 1.95,
+                color: 'var(--foreground)',
+                margin: '0 auto 1.5rem',
+                maxWidth: '820px',
+                textAlign: 'center',
+              }}>
+                The journal provides a platform for the publication and dissemination of original
+                research articles and review papers across the broad domains of science, technology,
+                humanities, literature, commerce, and allied disciplines. It seeks to foster
+                interdisciplinary research, promote scholarly dialogue, and disseminate knowledge
+                that advances scientific inquiry, innovation, and societal development.
+              </p>
+
+              {/* Paragraph 3 — peer review blockquote */}
+              <blockquote className="about-intro-quote" style={{
+                margin: '2.25rem auto',
+                padding: 'clamp(1.25rem, 3.5vw, 1.85rem) clamp(1.25rem, 4.5vw, 2.5rem)',
+                borderTop: '2px solid var(--primary)',
+                borderBottom: '2px solid var(--primary)',
+                borderLeft: '1px solid var(--border)',
+                borderRight: '1px solid var(--border)',
+                background: 'var(--card)',
+                borderRadius: '0.875rem',
+                fontFamily: 'var(--font-serif)',
+                fontStyle: 'italic',
+                fontSize: 'clamp(1.02rem, 2.2vw, 1.12rem)',
+                lineHeight: 1.95,
+                color: 'var(--foreground)',
+                textAlign: 'center',
+                maxWidth: '780px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)',
+              }}>
+                All manuscripts submitted to the journal undergo a rigorous peer-review process to
+                ensure originality, scientific merit, methodological rigor, and ethical integrity.
+                The journal adheres to internationally accepted standards of publication ethics and
+                follows a transparent and objective editorial process for the evaluation and
+                publication of manuscripts.
+              </blockquote>
+
+              {/* Paragraph 4 */}
+              <p className="about-intro-p" style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(1.02rem, 2.2vw, 1.1rem)',
+                lineHeight: 1.95,
+                color: 'var(--foreground)',
+                margin: '0 auto 1.5rem',
+                maxWidth: '820px',
+                textAlign: 'center',
+              }}>
+                The editorial policies, publication standards, and strategic direction of the journal
+                are formulated and periodically reviewed by the <strong>Editorial Board</strong> and{' '}
+                <strong>Advisory Board</strong>, comprising distinguished academicians and researchers
+                from diverse disciplines. Their collective expertise ensures that the journal maintains
+                the highest standards of scholarly excellence, academic integrity, and editorial quality.
+              </p>
+
+              {/* Paragraph 5 */}
+              <p className="about-intro-p" style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(1.02rem, 2.2vw, 1.1rem)',
+                lineHeight: 1.95,
+                color: 'var(--foreground)',
+                margin: '0 auto',
+                maxWidth: '820px',
+                textAlign: 'center',
+              }}>
+                Through its unwavering commitment to quality publishing and interdisciplinary
+                scholarship, <em>Science &amp; Society</em> serves as a vibrant platform for
+                researchers, academicians, professionals, and students to disseminate innovative
+                research, exchange ideas, and contribute to the advancement of knowledge across
+                diverse disciplines.
+              </p>
+            </div>
+
           </div>
         </section>
 
@@ -323,7 +330,8 @@ export default function About() {
                   key={c.title}
                   className="card"
                   style={{
-                    width: '260px',
+                    width: 'min(260px, 100%)',
+                    maxWidth: '100%',
                     flexShrink: 0,
                     padding: '1.75rem 1.5rem',
                     display: 'flex',
